@@ -1,52 +1,41 @@
 import React from "react";
 import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownItem, NavbarText, DropdownToggle, DropdownMenu } from 'reactstrap'
+import { Link } from "react-router-dom";
 
 export default function Navbarr() {
 
     return (
         <>
             <Navbar color="dark" dark expand="md" fixed="top" full light>
-            <NavbarBrand href="/">
-                reactstrap
-            </NavbarBrand>
-            <NavbarToggler onClick={function noRefCheck() { }} />
-            <Collapse navbar>
-                <Nav className="me-auto" navbar>
-                    <NavItem>
-                        <NavLink href="/components/">
-                            Components
-                        </NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink href="https://github.com/reactstrap/reactstrap">
-                            GitHub
-                        </NavLink>
-                    </NavItem>
-                    <UncontrolledDropdown inNavbar nav>
-                        <DropdownToggle caret nav>
-                            Options
-                        </DropdownToggle>
-                        <DropdownMenu right>
-                            <DropdownItem>
-                                Option 1
-                            </DropdownItem>
-                            <DropdownItem>
-                                Option 2
-                            </DropdownItem>
-                            <DropdownItem divider />
-                            <DropdownItem>
-                                Reset
-                            </DropdownItem>
-                        </DropdownMenu>
-                    </UncontrolledDropdown>
-                </Nav>
-                <NavbarText>
-                    Simple Text
-                </NavbarText>
-            </Collapse>
-        </Navbar>
+                <NavbarBrand>
+                    <Link to="/">
+
+                        Home
+                    </Link>
+                </NavbarBrand>
+                <NavbarToggler onClick={function noRefCheck() { }} />
+                <Collapse navbar>
+                    <Nav className="me-auto" navbar>
+                        <NavItem>
+                            <NavLink>
+
+                                <Link to="/Journaling2">Journaling2</Link>
+                            </NavLink>
+
+                        </NavItem>
+                        <NavItem>
+                            <NavLink>
+
+                                <Link to="/Journaling3">Journaling3</Link>
+                            </NavLink>
+                        </NavItem>
+
+                    </Nav>
+
+                </Collapse>
+            </Navbar>
         </>
-        
+
     )
 
 }

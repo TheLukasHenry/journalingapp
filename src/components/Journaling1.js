@@ -1,10 +1,11 @@
 import React from 'react'
 import { Form, FormGroup, Label, Col, Input, FormText, Button } from 'reactstrap'
 
-export default function Journaling3() {
+export default function Journaling1() {
     return (
+
         <div className="container-fluid">
-            <h1 className="text-center">Journaling 3</h1>
+            <h1 className="text-center">Welcome to your guided journaling app!</h1>
             <h2 className="text-center">Best place to start ↓</h2>
 
             <Form inline>
@@ -75,5 +76,7 @@ export default function Journaling3() {
             </Form>
 
         </div>
+
+
     )
 }

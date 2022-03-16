@@ -1,11 +1,12 @@
+@import url("http://fonts.cdnfonts.com/css/sofia-pro");
+@import url("http://fonts.cdnfonts.com/css/cubano");
 
 
 
 
-
-.main {
+body {
     padding-top: 5rem;
-    padding-bottom: 5rem;
+    /* padding-bottom: 5rem; */
     font-family: "Sofia Pro", sans-serif;
     color: #d1e0d9;
     background-color: #262626;
