@@ -1,18 +1,10 @@
 import React from 'react'
-import Navbarr from './Navbar'
-import Journaling2 from './Journaling2'
-import Journaling3 from './Journaling3'
-
 import { Form, FormGroup, Label, Col, Input, FormText, Button } from 'reactstrap'
 
-function Main() {
-    return (
-        <>
-
-            <Navbarr />
-            <div className='main container-fluid'>
-                <div>
-                    <h1 className="text-center">Welcome to your guided journaling app!</h1>
+export default function Journaling2() {
+  return (
+    <div>
+                    <h1 className="text-center">Journaling2</h1>
                     <h2 className="text-center">Best place to start ↓</h2>
                    
                     <Form inline>
@@ -83,12 +75,5 @@ function Main() {
                     </Form>
 
                 </div>
-                <Journaling2/>
-                <Journaling3/>
-
-            </div>
-        </>
-    )
+  )
 }
-
-export default Main

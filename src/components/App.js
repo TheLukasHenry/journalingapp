@@ -1,10 +1,13 @@
 
 import React from 'react';
+import '../css/App.css'
+import Main from './Main'
 
 function App() {
   return (
     <div className="App">
-      hello there
+      <Main />
+      
     </div>
   );
 }
