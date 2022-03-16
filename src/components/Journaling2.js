@@ -1,5 +1,6 @@
 import React from 'react'
-import { Form, FormGroup, Label, Col, Input, FormText, Button } from 'reactstrap'
+import { Form, FormGroup, Label, Input,  Button } from 'reactstrap'
+
 
 export default function Journaling2() {
     return (
