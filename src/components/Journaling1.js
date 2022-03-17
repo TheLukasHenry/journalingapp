@@ -2,7 +2,8 @@ import React from 'react'
 import { Form, FormGroup, Label, Input,  Button } from 'reactstrap'
 
 
-export default function Journaling1() {
+export default function Journaling1({journals}) {
+    console.log(journals)
     return (
 
         <div className="container-fluid">
@@ -12,60 +13,60 @@ export default function Journaling1() {
             <Form inline>
                 <FormGroup floating>
                     <Input
-                        id="exampleEmail"
-                        name="email"
+                        id="journaling1question1"
+                        name="journaling1question1"
                         placeholder="Text"
                         type="textarea"
                     />
-                    <Label for="exampleEmail" className="text-dark h5" >
+                    <Label for="journaling1question1" className="text-dark h5" >
                         What kind of day are you having, and why?
                     </Label>
                 </FormGroup>
                 {' '}
                 <FormGroup floating>
                     <Input
-                        id="exampleEmail"
-                        name="email"
+                        id="journaling1-q2"
+                        name="journaling1-q2"
                         placeholder="Text"
                         type="textarea"
                     />
-                    <Label for="exampleEmail" className="text-dark h5" >
+                    <Label for="journaling1-q2" className="text-dark h5" >
                         List 5 things you are  most grateful for…
                     </Label>
                 </FormGroup>
                 {' '}
                 <FormGroup floating>
                     <Input
-                        id="exampleEmail"
-                        name="email"
+                        id="journaling1-q3"
+                        name="journaling1-q3"
                         placeholder="Text"
                         type="textarea"
                     />
-                    <Label for="exampleEmail" className="text-dark h5" >
+                    <Label for="journaling1-q3" className="text-dark h5" >
                         How would you feel if you lost the things you are grateful for?
                     </Label>
                 </FormGroup>
                 {' '}
                 <FormGroup floating>
                     <Input
-                        id="exampleEmail"
-                        name="email"
+                        id="journaling1-q4"
+                        name="journaling1-q4"
                         placeholder="Text"
                         type="textarea"
                     />
-                    <Label for="exampleEmail" className="text-dark h5" >
+                    <Label for="journaling1-q4" className="text-dark h5" >
                         Write a letter with advice to 5yo yourself…
                     </Label>
                 </FormGroup>
                 {' '}
                 <FormGroup floating>
                     <Input
-                        id="exampleEmail"
-                        name="email"
+                        id="journaling1-q5"
+                        name="journaling1-q5"
                         placeholder="Text"
                         type="textarea"
                     />
-                    <Label for="exampleEmail" className="text-dark h5" >
+                    <Label for="journaling1-q5" className="text-dark h5" >
                         What a perfect day would look like to you?
                     </Label>
                 </FormGroup>
