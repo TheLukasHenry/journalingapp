@@ -1,16 +1,23 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap'
+import { JournalContext  } from './Main'
 
 
 // export default function Journaling1({journals}) {
-export default function Journaling1({ journals, id }) {
+export default function Journaling1({ questions, id }) {
 
-    console.log('full object: ', journals)
+    console.log('questions: ', questions)
     console.log('id: ', id)
-    console.log('question1: ', journals.question1)
+
 
     // console.log('part of object: ' , journals[0].id)
     // console.log('part of object: ' , journals[0].journaling1questions[0].question3)
+
+    const { handleJournalChange } = useContext(JournalContext)
+
+    function handleChange(changes) {
+        handleJournalChange(id, { ...questions, ...changes })
+    }
 
     return (
 
@@ -23,6 +30,9 @@ export default function Journaling1({ journals, id }) {
                     <Input
                         id="journaling1question1"
                         name="journaling1question1"
+                        value={questions.question1}
+                        // {questions.question1}
+                        onChange={e => handleChange({question1: e.target.value})}
                         placeholder="Text"
                         type="textarea"
                     />
@@ -84,6 +94,7 @@ export default function Journaling1({ journals, id }) {
                     Submit
                 </Button>
             </Form>
+            <p>Answer for question1: {questions.question1}</p>
 
         </div>
 
