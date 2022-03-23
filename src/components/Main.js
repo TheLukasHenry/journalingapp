@@ -19,7 +19,7 @@ function Main() {
     const [journals, setJournals] = useState(defaultDays)
 
     const JournalContextValue = {
-        
+
     }
 
     return (
@@ -30,7 +30,7 @@ function Main() {
             <JournalContext.Provider value={JournalContextValue}>
                 <Routes>
 
-                    <Route path="/" element={<Journaling1 journals={journals}/>}>
+                    <Route path="/" element={<Journaling1 journals={journals[0].journaling1questions} id={journals[0].id}/>}>
 
                     </Route>
                     <Route path="/Journaling2" element={<Journaling2 />}>
@@ -45,11 +45,115 @@ function Main() {
     )
 }
 
+// const defaultDays = [
+//     {
+//         id: uuidv4(),
+//         day: 'Day1',
+//         journaling1questions: [
+//             {
+
+//                 question1: 'Answear 1',
+//                 question2: 'Answear 2',
+//                 question3: 'Answear 3',
+//                 question4: 'Answear 4',
+//                 question5: 'Answear 5'
+//             }
+
+//         ],
+//         journaling2questions: [
+//             {
+
+//                 question1: 'Answear 1',
+//                 question2: 'Answear 2',
+//                 question3: 'Answear 3',
+//                 question4: 'Answear 4',
+//                 question5: 'Answear 5'
+//             }
+
+//         ],
+//         journaling3questions: [
+//             {
+
+//                 question1: 'Answear 1',
+//                 question2: 'Answear 2',
+//                 question3: 'Answear 3',
+//                 question4: 'Answear 4',
+//                 question5: 'Answear 5'
+//             }
+
+//         ],
+
+
+//     },
+//     {
+//         id: uuidv4(),
+//         day: 'Day2',
+//         journaling1questions: [
+//             {
+
+//                 question1: 'Answear 1',
+//                 question2: 'Answear 2',
+//                 question3: 'Answear 3',
+//                 question4: 'Answear 4',
+//                 question5: 'Answear 5'
+//             }
+
+//         ],
+//         journaling2questions: [
+//             {
+
+//                 question1: 'Answear 1',
+//                 question2: 'Answear 2',
+//                 question3: 'Answear 3',
+//                 question4: 'Answear 4',
+//                 question5: 'Answear 5'
+//             }
+
+//         ],
+//         journaling3questions: [
+//             {
+
+//                 question1: 'Answear 1',
+//                 question2: 'Answear 2',
+//                 question3: 'Answear 3',
+//                 question4: 'Answear 4',
+//                 question5: 'Answear 5'
+//             }
+
+//         ]
+
+
+//     }
+    
+// ]
+
 const defaultDays = [
     {
         id: uuidv4(),
         day: 'Day1',
-        journaling1questions: [
+        journaling1questions: 
+            {
+
+                question1: 'Answear 1',
+                question2: 'Answear 2',
+                question3: 'Answear 3',
+                question4: 'Answear 4',
+                question5: 'Answear 5'
+            },
+
+        
+        journaling2questions: 
+            {
+
+                question1: 'Answear 1',
+                question2: 'Answear 2',
+                question3: 'Answear 3',
+                question4: 'Answear 4',
+                question5: 'Answear 5'
+            },
+
+        
+        journaling3questions: 
             {
 
                 question1: 'Answear 1',
@@ -59,36 +163,36 @@ const defaultDays = [
                 question5: 'Answear 5'
             }
 
-        ],
-        journaling2questions: [
-            {
-
-                question1: 'Answear 1',
-                question2: 'Answear 2',
-                question3: 'Answear 3',
-                question4: 'Answear 4',
-                question5: 'Answear 5'
-            }
-
-        ],
-        journaling3questions: [
-            {
-
-                question1: 'Answear 1',
-                question2: 'Answear 2',
-                question3: 'Answear 3',
-                question4: 'Answear 4',
-                question5: 'Answear 5'
-            }
-
-        ],
+        
 
 
     },
     {
         id: uuidv4(),
         day: 'Day2',
-        journaling1questions: [
+        journaling1questions: 
+            {
+
+                question1: 'Answear 1',
+                question2: 'Answear 2',
+                question3: 'Answear 3',
+                question4: 'Answear 4',
+                question5: 'Answear 5'
+            },
+
+        
+        journaling2questions: 
+            {
+
+                question1: 'Answear 1',
+                question2: 'Answear 2',
+                question3: 'Answear 3',
+                question4: 'Answear 4',
+                question5: 'Answear 5'
+            },
+
+        
+        journaling3questions: 
             {
 
                 question1: 'Answear 1',
@@ -97,30 +201,6 @@ const defaultDays = [
                 question4: 'Answear 4',
                 question5: 'Answear 5'
             }
-
-        ],
-        journaling2questions: [
-            {
-
-                question1: 'Answear 1',
-                question2: 'Answear 2',
-                question3: 'Answear 3',
-                question4: 'Answear 4',
-                question5: 'Answear 5'
-            }
-
-        ],
-        journaling3questions: [
-            {
-
-                question1: 'Answear 1',
-                question2: 'Answear 2',
-                question3: 'Answear 3',
-                question4: 'Answear 4',
-                question5: 'Answear 5'
-            }
-
-        ]
 
 
     }

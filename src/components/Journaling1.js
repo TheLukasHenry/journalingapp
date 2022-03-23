@@ -1,9 +1,17 @@
 import React from 'react'
-import { Form, FormGroup, Label, Input,  Button } from 'reactstrap'
+import { Form, FormGroup, Label, Input, Button } from 'reactstrap'
 
 
-export default function Journaling1({journals}) {
-    console.log(journals)
+// export default function Journaling1({journals}) {
+export default function Journaling1({ journals, id }) {
+
+    console.log('full object: ', journals)
+    console.log('id: ', id)
+    console.log('question1: ', journals.question1)
+
+    // console.log('part of object: ' , journals[0].id)
+    // console.log('part of object: ' , journals[0].journaling1questions[0].question3)
+
     return (
 
         <div className="container-fluid">
