@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
     BrowserRouter,
     Routes,
@@ -14,25 +14,55 @@ import Journaling3 from './Journaling3'
 export const JournalContext = React.createContext()
 
 
+
+const LOCAL_STORAGE_KEY = 'journaling'
+
+
 function Main() {
 
     const [journals, setJournals] = useState(defaultDays)
 
-    function test(id) {
-        const foundJournal = journals.findIndex(j => j.id === id)
-        console.log('found journal: ', id, foundJournal);
-        // console.log('main ids: ', journals.find(j => j.id === id));
-    }
 
-    test(journals[0].id)
+    // attempting to save data to localStorage
+    useEffect(() => {
+        const journalJSON = localStorage.getItem(LOCAL_STORAGE_KEY)
+        if (journalJSON != null) setJournals(JSON.parse(journalJSON))
+
+      }, [])
+    
+      useEffect(() => {
+        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(journals))
+
+      }, [journals])
 
 
+
+
+
+
+// // useless test function
+//     function test(id) {
+//         const foundJournal = journals.findIndex(j => j.id === id)
+//         console.log('found journal: ', id, foundJournal);
+//     }
+
+//     test(journals[0].id)
+
+
+// need to make this applicable to journaling2, 3, ... questions...
     function handleJournalChange(id, questions) {
         const newJournals = [...journals]
         const index = newJournals.findIndex(j => j.id === id)
-        const foundJournal = newJournals.find(j => j.id === id)
-        // console.log('journal id: ', index);
         newJournals[index].journaling1questions = questions
+
+
+
+
+        // const foundJournal = newJournals.find(j => j.id === id)
+        // console.log('journal id: ', index);
+
+        // newJournals[index] = [...newJournals[index], newJournals[index].journaling1questions = questions]
+
         setJournals(newJournals)
     }
 
@@ -65,87 +95,6 @@ function Main() {
     )
 }
 
-// const defaultDays = [
-//     {
-//         id: uuidv4(),
-//         day: 'Day1',
-//         journaling1questions: [
-//             {
-
-//                 question1: 'Answear 1',
-//                 question2: 'Answear 2',
-//                 question3: 'Answear 3',
-//                 question4: 'Answear 4',
-//                 question5: 'Answear 5'
-//             }
-
-//         ],
-//         journaling2questions: [
-//             {
-
-//                 question1: 'Answear 1',
-//                 question2: 'Answear 2',
-//                 question3: 'Answear 3',
-//                 question4: 'Answear 4',
-//                 question5: 'Answear 5'
-//             }
-
-//         ],
-//         journaling3questions: [
-//             {
-
-//                 question1: 'Answear 1',
-//                 question2: 'Answear 2',
-//                 question3: 'Answear 3',
-//                 question4: 'Answear 4',
-//                 question5: 'Answear 5'
-//             }
-
-//         ],
-
-
-//     },
-//     {
-//         id: uuidv4(),
-//         day: 'Day2',
-//         journaling1questions: [
-//             {
-
-//                 question1: 'Answear 1',
-//                 question2: 'Answear 2',
-//                 question3: 'Answear 3',
-//                 question4: 'Answear 4',
-//                 question5: 'Answear 5'
-//             }
-
-//         ],
-//         journaling2questions: [
-//             {
-
-//                 question1: 'Answear 1',
-//                 question2: 'Answear 2',
-//                 question3: 'Answear 3',
-//                 question4: 'Answear 4',
-//                 question5: 'Answear 5'
-//             }
-
-//         ],
-//         journaling3questions: [
-//             {
-
-//                 question1: 'Answear 1',
-//                 question2: 'Answear 2',
-//                 question3: 'Answear 3',
-//                 question4: 'Answear 4',
-//                 question5: 'Answear 5'
-//             }
-
-//         ]
-
-
-//     }
-
-// ]
 
 const defaultDays = [
     {
