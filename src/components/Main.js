@@ -43,16 +43,11 @@ function Main() {
 
 
 
-    // need to make this applicable to journaling2, 3, ... questions...
+
     function handleJournalChange(id, questions) {
         const newJournals = [...journals]
         const index = newJournals.findIndex(j => j.id === id)
-        newJournals[index].journaling1questions = questions
-
-        // const foundJournal = newJournals.find(j => j.id === id)
-        // console.log('journal id: ', index);
-        // newJournals[index] = [...newJournals[index], newJournals[index].journaling1questions = questions]
-        
+        newJournals[index].journaling1questions = questions     
         setJournals(newJournals)
     }
 
