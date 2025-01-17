@@ -21,7 +21,7 @@ const LOCAL_STORAGE_KEY = 'journaling'
 function Main() {
 
     const [journals, setJournals] = useState(defaultDays)
-
+    let day = 0
 
     // saving and loading journals in localStorage
     useEffect(() => {
@@ -36,14 +36,6 @@ function Main() {
     }, [journals])
 
 
-
-
-
-
-
-
-
-
     function handleJournalChange(id, questions) {
         const newJournals = [...journals]
         const index = newJournals.findIndex(j => j.id === id)
@@ -51,24 +43,20 @@ function Main() {
         setJournals(newJournals)
     }
 
-
-
     const JournalContextValue = {
         handleJournalChange
     }
 
     return (
-
-
         <BrowserRouter>
             <Navbarr />
             <JournalContext.Provider value={JournalContextValue}>
                 <Routes>
 
                     <Route path="/" element={<Journaling1
-                        questions={journals[0].journaling1questions}
+                        questions={journals[day].journaling1questions}
                         // questions={[...journals[0]]}
-                        id={journals[0].id} />}
+                        id={journals[day].id} />}
 
                     >
                     </Route>
@@ -76,9 +64,9 @@ function Main() {
                     <Route path="/Journaling2" element={<Journaling2
                         // questions=
                         // {[...journals[1]]}
-                        {...journals[0].journaling2questions}
+                        {...journals[day].journaling2questions}
 
-                    id={journals[0].id}
+                    id={journals[day].id}
 
                     />}
 
@@ -132,10 +120,6 @@ const defaultDays = [
             question4: 'Answear 4',
             question5: 'Answear 5'
         }
-
-
-
-
     },
     {
         id: uuidv4(),
